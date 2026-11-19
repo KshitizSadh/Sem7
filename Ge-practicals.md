@@ -24,8 +24,8 @@
 
 - Choose the significance level before testing. The examples generally
   use the **5% significance level**.
-- "Do not reject $H_0$" is the correct statistical wording; it does
-  not prove that $H_0$ is true.
+- "Do not reject $`H_0`$" is the correct statistical wording; it does
+  not prove that $`H_0`$ is true.
 - For rank tests, assign **average ranks** when values are tied.
 - For small samples, use exact distributions or the appropriate
   critical-value table wherever available. Large-sample normal or
@@ -70,33 +70,33 @@ its number of runs.
 
 Let:
 
-- $n_1$ = number of observations in category 1
-- $n_2$ = number of observations in category 2
-- $R$ = observed number of runs
-- $N = n_1 + n_2$
+- $`n_1`$ = number of observations in category 1
+- $`n_2`$ = number of observations in category 2
+- $`R`$ = observed number of runs
+- $`N = n_1 + n_2`$
 
 Expected number of runs:
 
-$$
+```math
 E(R) = \frac{2n_1n_2}{N} + 1
-$$
+```
 
 Variance:
 
-$$
-\operatorname{Var}(R) = \frac{2n_1n_2\,(2n_1n_2 - n_1 - n_2)}{N^2(N-1)}
-$$
+```math
+\mathrm{Var}(R) = \frac{2n_1n_2\,(2n_1n_2 - n_1 - n_2)}{N^2(N-1)}
+```
 
 For a sufficiently large sample:
 
-$$
-Z = \frac{R - E(R)}{\sqrt{\operatorname{Var}(R)}}
-$$
+```math
+Z = \frac{R - E(R)}{\sqrt{\mathrm{Var}(R)}}
+```
 
 ## Hypotheses
 
-- $H_0$: The sequence is randomly ordered.
-- $H_1$: The sequence is not randomly ordered.
+- $`H_0`$: The sequence is randomly ordered.
+- $`H_1`$: The sequence is not randomly ordered.
 
 ## Procedure
 
@@ -104,8 +104,8 @@ $$
 2. Find the median and classify observations as above (+) or below (−)
    the median.
 3. Apply the chosen rule to observations equal to the median.
-4. Count $n_1$, $n_2$, and the observed number of runs $R$.
-5. For a large sample, calculate the expected runs, variance, and $Z$.
+4. Count $`n_1`$, $`n_2`$, and the observed number of runs $`R`$.
+5. For a large sample, calculate the expected runs, variance, and $`Z`$.
 6. Compare with the appropriate critical value or use the p-value.
 
 ## Worked example A — Small sample (exact runs distribution)
@@ -118,9 +118,9 @@ Sequence:
 
 There are four positive signs and four negative signs:
 
-$$
+```math
 n_1 = 4, \quad n_2 = 4, \quad N = 8
-$$
+```
 
 Runs:
 
@@ -130,44 +130,44 @@ Runs:
 
 Therefore:
 
-$$
+```math
 R = 5
-$$
+```
 
 For a small sample, use the **exact runs distribution table** for
-$n_1 = 4,\ n_2 = 4$, rather than relying on the large-sample normal
-approximation. Here $E(R) = \frac{2(4)(4)}{8} + 1 = 5$, so the observed
+$`n_1 = 4,\ n_2 = 4`$, rather than relying on the large-sample normal
+approximation. Here $`E(R) = \frac{2(4)(4)}{8} + 1 = 5`$, so the observed
 number of runs is exactly what is expected under randomness. From the
-exact distribution, $P(R \le 5) = P(R \ge 5) = 44/70 \approx 0.629$, so
-the two-sided p-value is $1$ (capped at 1).
+exact distribution, $`P(R \le 5) = P(R \ge 5) = 44/70 \approx 0.629`$, so
+the two-sided p-value is $`1`$ (capped at 1).
 
-At the 5% level, $p > 0.05$, so **do not reject $H_0$**. There is
+At the 5% level, $`p > 0.05`$, so **do not reject $`H_0`$**. There is
 insufficient evidence that the sequence is non-random. (For
-$n_1 = n_2 = 4$, only $R = 2$ or $R = 8$ would be significant at 5%.)
+$`n_1 = n_2 = 4`$, only $`R = 2`$ or $`R = 8`$ would be significant at 5%.)
 
 ## Worked example B — Larger sample (normal approximation)
 
-Suppose a sequence contains $n_1 = 50$ plus signs and $n_2 = 50$ minus
-signs, and the observed number of runs is $R = 35$.
+Suppose a sequence contains $`n_1 = 50`$ plus signs and $`n_2 = 50`$ minus
+signs, and the observed number of runs is $`R = 35`$.
 
-$$
+```math
 N = 100
-$$
+```
 
-$$
+```math
 E(R) = \frac{2(50)(50)}{100} + 1 = 51
-$$
+```
 
-$$
-\operatorname{Var}(R) = \frac{2(50)(50)\,(5000 - 100)}{100^2\,(99)} \approx 24.747
-$$
+```math
+\mathrm{Var}(R) = \frac{2(50)(50)\,(5000 - 100)}{100^2\,(99)} \approx 24.747
+```
 
-$$
+```math
 Z = \frac{35 - 51}{\sqrt{24.747}} \approx -3.22
-$$
+```
 
 At 5% two-tailed significance, the critical values are approximately
-$\pm 1.96$. Since $|Z| = 3.22 > 1.96$, **reject $H_0$**. The
+$`\pm 1.96`$. Since $`|Z| = 3.22 > 1.96`$, **reject $`H_0`$**. The
 sequence shows evidence of non-randomness (too few runs, suggesting
 clustering).
 
@@ -175,8 +175,8 @@ clustering).
 
 For a two-tailed test at 5%:
 
-- If $|Z| \le 1.96$, do not reject $H_0$.
-- If $|Z| > 1.96$, reject $H_0$.
+- If $`|Z| \le 1.96`$, do not reject $`H_0`$.
+- If $`|Z| > 1.96`$, reject $`H_0`$.
 
 For small samples, use the exact runs table/p-value. Some references use
 a continuity correction for the normal approximation.
@@ -200,49 +200,49 @@ specified value or whether two paired conditions differ.
 ## Theory
 
 The **Sign Test** is a non-parametric test. For a one-sample test,
-compare each observation $X_i$ with the hypothesised median $M_0$:
+compare each observation $`X_i`$ with the hypothesised median $`M_0`$:
 
-- Write (+) if $X_i > M_0$.
-- Write (−) if $X_i < M_0$.
-- Ignore observations equal to $M_0$.
+- Write (+) if $`X_i > M_0`$.
+- Write (−) if $`X_i < M_0`$.
+- Ignore observations equal to $`M_0`$.
 
 For paired data, calculate each pair's difference and use its sign.
-Under $H_0$, positive and negative signs are equally likely:
+Under $`H_0`$, positive and negative signs are equally likely:
 
-$$
+```math
 P(+) = P(-) = 0.5
-$$
+```
 
-If $n$ is the number of non-zero differences, the number of positive
+If $`n`$ is the number of non-zero differences, the number of positive
 signs follows:
 
-$$
-X \sim \operatorname{Binomial}(n,\ 0.5)
-$$
+```math
+X \sim \mathrm{Binomial}(n,\ 0.5)
+```
 
 For a large sample, a normal approximation may be used:
 
-$$
+```math
 \mu = \frac{n}{2}, \qquad \sigma = \sqrt{\frac{n}{4}}
-$$
+```
 
 With continuity correction, a common two-sided calculation is:
 
-$$
+```math
 Z = \frac{|X - n/2| - 0.5}{\sqrt{n/4}}
-$$
+```
 
 ## Hypotheses
 
 For a one-sample test:
 
-- $H_0$: Population median $= M_0$.
-- $H_1$: Population median $\neq M_0$.
+- $`H_0`$: Population median $`= M_0`$.
+- $`H_1`$: Population median $`\neq M_0`$.
 
 For paired data:
 
-- $H_0$: Median paired difference $= 0$.
-- $H_1$: Median paired difference $\neq 0$.
+- $`H_0`$: Median paired difference $`= 0`$.
+- $`H_1`$: Median paired difference $`\neq 0`$.
 
 ## Procedure
 
@@ -253,32 +253,32 @@ For paired data:
 5. Use the exact binomial distribution for small samples.
 6. For large samples, use the normal approximation with continuity
    correction.
-7. Compare the p-value with $\alpha$.
+7. Compare the p-value with $`\alpha`$.
 
 ## Worked example A — Small sample (exact binomial test)
 
 A sample of 10 observations is compared with a hypothesised median.
 Eight observations are above it and two are below it.
 
-$$
+```math
 n = 10, \quad X = 8
-$$
+```
 
 For a two-sided test, the exact p-value is:
 
-$$
+```math
 p = 2\,P(X \le 2)
-$$
+```
 
-$$
+```math
 p = 2\left[\frac{\binom{10}{0} + \binom{10}{1} + \binom{10}{2}}{2^{10}}\right]
-$$
+```
 
-$$
+```math
 p = 2\left(\frac{1 + 10 + 45}{1024}\right) = 0.1094
-$$
+```
 
-Since $0.1094 > 0.05$, **do not reject $H_0$**. The sample does not
+Since $`0.1094 > 0.05`$, **do not reject $`H_0`$**. The sample does not
 provide sufficient evidence that the population median differs from the
 hypothesised value.
 
@@ -287,27 +287,27 @@ hypothesised value.
 Suppose 30 non-zero paired differences give 23 positive signs and 7
 negative signs.
 
-$$
+```math
 n = 30, \quad X = 23
-$$
+```
 
-$$
+```math
 \mu = 15, \qquad \sigma = \sqrt{7.5} \approx 2.739
-$$
+```
 
 With continuity correction:
 
-$$
+```math
 Z = \frac{23 - 15 - 0.5}{2.739} \approx 2.74
-$$
+```
 
-Since $2.74 > 1.96$, **reject $H_0$** at the 5% two-sided level. There is
+Since $`2.74 > 1.96`$, **reject $`H_0`$** at the 5% two-sided level. There is
 evidence of a systematic difference in the positive direction.
 
 ## Decision rule
 
-Reject $H_0$ when the p-value is less than or equal to the significance
-level. For a large-sample two-sided test at 5%, compare $|Z|$ with
+Reject $`H_0`$ when the p-value is less than or equal to the significance
+level. For a large-sample two-sided test at 5%, compare $`|Z|`$ with
 1.96.
 
 ---
@@ -329,50 +329,50 @@ related or paired samples using the Wilcoxon Signed-Rank Test.
 ## Theory
 
 The **Wilcoxon Signed-Rank Test** is a non-parametric alternative to the
-paired-samples $t$-test. It uses both the **magnitude (through ranks)**
+paired-samples $`t`$-test. It uses both the **magnitude (through ranks)**
 and the **sign** of paired differences.
 
 For each pair:
 
-$$
+```math
 d_i = X_i - Y_i
-$$
+```
 
-Ignore zero differences. Rank the absolute differences $|d_i|$ from
+Ignore zero differences. Rank the absolute differences $`|d_i|`$ from
 smallest to largest. Give tied absolute differences their average rank,
 then restore the original + or − sign.
 
 Let:
 
-- $W^+$ = sum of positive ranks
-- $W^-$ = sum of negative ranks
+- $`W^+`$ = sum of positive ranks
+- $`W^-`$ = sum of negative ranks
 
 For the traditional small-sample table, the test statistic is often:
 
-$$
+```math
 T = \min(W^+,\ W^-)
-$$
+```
 
 For large samples, a normal approximation can be used. With no ties in
 absolute differences:
 
-$$
+```math
 \mu_W = \frac{n(n+1)}{4}
-$$
+```
 
-$$
+```math
 \sigma_W = \sqrt{\frac{n(n+1)(2n+1)}{24}}
-$$
+```
 
 A continuity correction may be applied. Ties require a variance
 adjustment.
 
 ## Hypotheses
 
-- $H_0$: The median paired difference is zero (under the usual
+- $`H_0`$: The median paired difference is zero (under the usual
   symmetry assumption, the difference distribution is centred at
   zero).
-- $H_1$: The median paired difference is not zero.
+- $`H_1`$: The median paired difference is not zero.
 
 ## Procedure
 
@@ -380,7 +380,7 @@ adjustment.
 2. Remove zero differences.
 3. Rank the absolute differences.
 4. Restore the signs to the ranks.
-5. Calculate $W^+$ and $W^-$.
+5. Calculate $`W^+`$ and $`W^-`$.
 6. Use an exact Wilcoxon table for small samples or a normal
    approximation for large samples.
 7. Make the decision using the p-value or critical value.
@@ -389,11 +389,11 @@ adjustment.
 
 Six paired differences are:
 
-$$
+```math
 +1,\ +2,\ +3,\ +4,\ +5,\ -6
-$$
+```
 
-| Difference $d$ | $\lvert d \rvert$ | Rank of $\lvert d \rvert$ | Signed rank |
+| Difference $`d`$ | $`\lvert d \rvert`$ | Rank of $`\lvert d \rvert`$ | Signed rank |
 |---:|---:|---:|---:|
 | +1 | 1 | 1 | +1 |
 | +2 | 2 | 2 | +2 |
@@ -402,23 +402,23 @@ $$
 | +5 | 5 | 5 | +5 |
 | −6 | 6 | 6 | −6 |
 
-$$
+```math
 W^+ = 1 + 2 + 3 + 4 + 5 = 15
-$$
+```
 
-$$
+```math
 W^- = 6
-$$
+```
 
-$$
+```math
 T = \min(15,\ 6) = 6
-$$
+```
 
-For $n = 6$, the exact one-sided probability is
-$P(T \le 6) = 14/64 \approx 0.219$, so the exact two-sided p-value is
-approximately **0.438**. Since $p > 0.05$, **do not reject $H_0$**. The
-result is not statistically significant at the 5% level. (For $n = 6$,
-only $T = 0$ is significant at the 5% two-sided level.)
+For $`n = 6`$, the exact one-sided probability is
+$`P(T \le 6) = 14/64 \approx 0.219`$, so the exact two-sided p-value is
+approximately **0.438**. Since $`p > 0.05`$, **do not reject $`H_0`$**. The
+result is not statistically significant at the 5% level. (For $`n = 6`$,
+only $`T = 0`$ is significant at the 5% two-sided level.)
 
 ## Worked example B — Larger sample (normal approximation)
 
@@ -426,35 +426,35 @@ Suppose there are 20 non-zero paired differences. Their absolute values
 have ranks 1 through 20, with the two largest ranks (19 and 20) negative
 and all other ranks positive.
 
-$$
+```math
 W^+ = 1 + 2 + \cdots + 18 = 171
-$$
+```
 
-$$
+```math
 W^- = 19 + 20 = 39
-$$
+```
 
-$$
+```math
 T = 39
-$$
+```
 
-For $n = 20$:
+For $`n = 20`$:
 
-$$
+```math
 \mu_W = \frac{20(21)}{4} = 105
-$$
+```
 
-$$
+```math
 \sigma_W = \sqrt{\frac{20(21)(41)}{24}} \approx 26.786
-$$
+```
 
 Using continuity correction:
 
-$$
+```math
 Z = \frac{|39 - 105| - 0.5}{26.786} \approx 2.45
-$$
+```
 
-Since $2.45 > 1.96$, **reject $H_0$** at the 5% two-sided level. There is
+Since $`2.45 > 1.96`$, **reject $`H_0`$** at the 5% two-sided level. There is
 evidence of a non-zero paired difference.
 
 ## Important note
@@ -487,37 +487,37 @@ The **one-sample Kolmogorov–Smirnov (K–S) test** compares the
 empirical cumulative distribution function (ECDF) of a sample with a
 specified theoretical cumulative distribution function (CDF).
 
-For ordered observations $x_{(1)}, \ldots, x_{(n)}$, let $F(x)$
+For ordered observations $`x_{(1)}, \ldots, x_{(n)}`$, let $`F(x)`$
 be the specified theoretical CDF. Define:
 
-$$
+```math
 D^+ = \max_i \left[\frac{i}{n} - F(x_{(i)})\right]
-$$
+```
 
-$$
+```math
 D^- = \max_i \left[F(x_{(i)}) - \frac{i-1}{n}\right]
-$$
+```
 
 The test statistic is:
 
-$$
+```math
 D = \max(D^+,\ D^-)
-$$
+```
 
 ## Hypotheses
 
-- $H_0$: The sample follows the specified theoretical distribution.
-- $H_1$: The sample does not follow the specified theoretical
+- $`H_0`$: The sample follows the specified theoretical distribution.
+- $`H_1`$: The sample does not follow the specified theoretical
   distribution.
 
 ## Procedure
 
-1. Specify the continuous theoretical distribution under $H_0$.
+1. Specify the continuous theoretical distribution under $`H_0`$.
 2. Arrange the sample observations in ascending order.
-3. Calculate the theoretical cumulative probability $F(x_{(i)})$ for each
+3. Calculate the theoretical cumulative probability $`F(x_{(i)})`$ for each
    observation.
-4. Calculate $D^+$ and $D^-$.
-5. Take the larger value as $D$.
+4. Calculate $`D^+`$ and $`D^-`$.
+5. Take the larger value as $`D`$.
 6. Compare with the appropriate critical value or obtain the p-value.
 
 ## Worked example A — Small sample
@@ -525,13 +525,13 @@ $$
 Test whether the following five observations are consistent with a
 Uniform(0, 1) distribution:
 
-$$
+```math
 0.10,\ 0.25,\ 0.40,\ 0.70,\ 0.90
-$$
+```
 
-For Uniform(0, 1), $F(x) = x$.
+For Uniform(0, 1), $`F(x) = x`$.
 
-| $i$ | $x_{(i)}$ | $i/n$ | $(i-1)/n$ | $F(x_{(i)})$ | $i/n - F(x_{(i)})$ | $F(x_{(i)}) - (i-1)/n$ |
+| $`i`$ | $`x_{(i)}`$ | $`i/n`$ | $`(i-1)/n`$ | $`F(x_{(i)})`$ | $`i/n - F(x_{(i)})`$ | $`F(x_{(i)}) - (i-1)/n`$ |
 |---:|---:|---:|---:|---:|---:|---:|
 | 1 | 0.10 | 0.20 | 0.00 | 0.10 | 0.10 | 0.10 |
 | 2 | 0.25 | 0.40 | 0.20 | 0.25 | 0.15 | 0.05 |
@@ -539,48 +539,48 @@ For Uniform(0, 1), $F(x) = x$.
 | 4 | 0.70 | 0.80 | 0.60 | 0.70 | 0.10 | 0.10 |
 | 5 | 0.90 | 1.00 | 0.80 | 0.90 | 0.10 | 0.10 |
 
-$$
+```math
 D^+ = 0.20, \qquad D^- = 0.10
-$$
+```
 
-$$
+```math
 D = 0.20
-$$
+```
 
-For $n = 5$, the 5% exact critical value is approximately 0.565. Since
-$0.20 < 0.565$, **do not reject $H_0$**. The sample is not significantly
+For $`n = 5`$, the 5% exact critical value is approximately 0.565. Since
+$`0.20 < 0.565`$, **do not reject $`H_0`$**. The sample is not significantly
 different from Uniform(0, 1).
 
 ## Worked example B — Larger sample
 
-Suppose $n = 40$ observations are tested against Uniform(0, 1). Assume 20
+Suppose $`n = 40`$ observations are tested against Uniform(0, 1). Assume 20
 observations are between 0.01 and 0.20, and the remaining 20 are between
 0.71 and 0.90.
 
-At $x = 0.20$:
+At $`x = 0.20`$:
 
-$$
+```math
 F_n(0.20) = \frac{20}{40} = 0.50
-$$
+```
 
-$$
+```math
 F(0.20) = 0.20
-$$
+```
 
 Therefore, the difference at this point is:
 
-$$
+```math
 |0.50 - 0.20| = 0.30
-$$
+```
 
-Thus $D \ge 0.30$. The 5% large-sample approximate critical value
+Thus $`D \ge 0.30`$. The 5% large-sample approximate critical value
 is:
 
-$$
+```math
 D_{\text{critical}} = \frac{1.36}{\sqrt{40}} \approx 0.215
-$$
+```
 
-Since $D \ge 0.30 > 0.215$, **reject $H_0$**. The observations are
+Since $`D \ge 0.30 > 0.215`$, **reject $`H_0`$**. The observations are
 inconsistent with the specified Uniform(0, 1) distribution.
 
 ## Important notes
@@ -613,21 +613,21 @@ continuous probability distribution.
 The **two-sample K–S test** compares the empirical cumulative
 distribution functions of two independent samples.
 
-Let $F_{1,n_1}(x)$ and $F_{2,n_2}(x)$ be the empirical CDFs of samples of
-sizes $n_1$ and $n_2$.
+Let $`F_{1,n_1}(x)`$ and $`F_{2,n_2}(x)`$ be the empirical CDFs of samples of
+sizes $`n_1`$ and $`n_2`$.
 
 The test statistic is:
 
-$$
+```math
 D = \sup_x \left| F_{1,n_1}(x) - F_{2,n_2}(x) \right|
-$$
+```
 
 It is the largest vertical distance between the two empirical CDFs.
 
 ## Hypotheses
 
-- $H_0$: Both samples come from the same continuous distribution.
-- $H_1$: The two population distributions differ.
+- $`H_0`$: Both samples come from the same continuous distribution.
+- $`H_1`$: The two population distributions differ.
 
 ## Procedure
 
@@ -635,35 +635,35 @@ It is the largest vertical distance between the two empirical CDFs.
 2. At each distinct value, calculate the cumulative proportion in
    sample 1 and sample 2.
 3. Find the absolute difference between the two cumulative proportions.
-4. The largest difference is $D$.
+4. The largest difference is $`D`$.
 5. Compare with the critical value or use the p-value.
 
 ## Worked example A — Small sample
 
 Sample 1:
 
-$$
+```math
 1,\ 2,\ 3,\ 4,\ 5
-$$
+```
 
 Sample 2:
 
-$$
+```math
 6,\ 7,\ 8,\ 9,\ 10
-$$
+```
 
 The two samples do not overlap. After the first sample's five
 observations, its ECDF is 1 while the second sample's ECDF is 0.
 Therefore:
 
-$$
+```math
 D = 1.00
-$$
+```
 
-For $n_1 = n_2 = 5$, $D = 1$ is the most extreme value possible. It
+For $`n_1 = n_2 = 5`$, $`D = 1`$ is the most extreme value possible. It
 occurs only when one sample lies entirely below the other, so the exact
-two-sided p-value is $2 / \binom{10}{5} = 2/252 \approx 0.008$. Since
-$0.008 < 0.05$, **reject $H_0$**. There is evidence that the two
+two-sided p-value is $`2 / \binom{10}{5} = 2/252 \approx 0.008`$. Since
+$`0.008 < 0.05`$, **reject $`H_0`$**. There is evidence that the two
 distributions differ.
 
 ## Worked example B — Larger sample
@@ -671,33 +671,33 @@ distributions differ.
 Let sample 1 contain the integers 1 through 40, and sample 2 contain the
 integers 21 through 60.
 
-At $x = 20$:
+At $`x = 20`$:
 
-$$
+```math
 F_1(20) = \frac{20}{40} = 0.50
-$$
+```
 
-$$
+```math
 F_2(20) = 0
-$$
+```
 
 Therefore:
 
-$$
+```math
 D \ge 0.50
-$$
+```
 
-For $n_1 = n_2 = 40$, the approximate 5% critical value is:
+For $`n_1 = n_2 = 40`$, the approximate 5% critical value is:
 
-$$
+```math
 D_{\text{critical}} = 1.36\sqrt{\frac{40 + 40}{40(40)}}
-$$
+```
 
-$$
+```math
 D_{\text{critical}} \approx 0.304
-$$
+```
 
-Since $D \ge 0.50 > 0.304$, **reject $H_0$**. The two samples show
+Since $`D \ge 0.50 > 0.304`$, **reject $`H_0`$**. The two samples show
 significantly different distributions.
 
 ## Important note
@@ -719,7 +719,7 @@ the Mann–Whitney U Test.
 
 - To compare two independent groups using ranks.
 - To apply a non-parametric alternative to the independent-samples
-  $t$-test.
+  $`t`$-test.
 - To determine whether observations in one group tend to be higher or
   lower than those in the other group.
 
@@ -731,39 +731,39 @@ to largest, and calculate the sum of ranks for each group.
 
 Let:
 
-- $n_1, n_2$ = sample sizes
-- $R_1, R_2$ = rank sums
+- $`n_1, n_2`$ = sample sizes
+- $`R_1, R_2`$ = rank sums
 
 The U statistics are:
 
-$$
+```math
 U_1 = R_1 - \frac{n_1(n_1+1)}{2}
-$$
+```
 
-$$
+```math
 U_2 = R_2 - \frac{n_2(n_2+1)}{2}
-$$
+```
 
-$$
+```math
 U = \min(U_1,\ U_2)
-$$
+```
 
 For large samples, a normal approximation may be used. Without ties:
 
-$$
+```math
 \mu_U = \frac{n_1 n_2}{2}
-$$
+```
 
-$$
+```math
 \sigma_U = \sqrt{\frac{n_1 n_2 (n_1 + n_2 + 1)}{12}}
-$$
+```
 
 A continuity correction and tie adjustment may be needed.
 
 ## Hypotheses
 
-- $H_0$: The two population distributions are the same.
-- $H_1$: The two population distributions differ.
+- $`H_0`$: The two population distributions are the same.
+- $`H_1`$: The two population distributions differ.
 
 If the two distributions have the same shape and spread, the test is
 often interpreted as a test of location/median difference.
@@ -774,7 +774,7 @@ often interpreted as a test of location/median difference.
 2. Combine all observations.
 3. Rank them in ascending order; use average ranks for ties.
 4. Calculate each group's rank sum.
-5. Calculate $U_1$, $U_2$, and the smaller U.
+5. Calculate $`U_1`$, $`U_2`$, and the smaller U.
 6. Use an exact table for small samples or a normal approximation for
    large samples.
 7. Make the decision.
@@ -795,61 +795,61 @@ often interpreted as a test of location/median difference.
 | 7 | A | 7 |
 | 8 | B | 8 |
 
-$$
+```math
 R_A = 4 + 5 + 6 + 7 = 22
-$$
+```
 
-$$
+```math
 R_B = 1 + 2 + 3 + 8 = 14
-$$
+```
 
-With $n_A = n_B = 4$:
+With $`n_A = n_B = 4`$:
 
-$$
+```math
 U_A = 22 - \frac{4(5)}{2} = 12
-$$
+```
 
-$$
+```math
 U_B = 14 - \frac{4(5)}{2} = 4
-$$
+```
 
-$$
+```math
 U = \min(12,\ 4) = 4
-$$
+```
 
-For $n_1 = n_2 = 4$, the exact two-sided p-value is approximately 0.343.
-Since $p > 0.05$, **do not reject $H_0$**.
+For $`n_1 = n_2 = 4`$, the exact two-sided p-value is approximately 0.343.
+Since $`p > 0.05`$, **do not reject $`H_0`$**.
 
 ## Worked example B — Larger sample (normal approximation)
 
 Sample A has values 21 through 40; sample B has values 1 through 20.
 Thus every A observation is greater than every B observation.
 
-$$
+```math
 n_1 = n_2 = 20
-$$
+```
 
 The U statistic for the lower-ranked group is:
 
-$$
+```math
 U = 0
-$$
+```
 
-$$
+```math
 \mu_U = \frac{20(20)}{2} = 200
-$$
+```
 
-$$
+```math
 \sigma_U = \sqrt{\frac{20(20)(41)}{12}} \approx 36.97
-$$
+```
 
 Using continuity correction:
 
-$$
+```math
 Z = \frac{|0 - 200| - 0.5}{36.97} \approx 5.40
-$$
+```
 
-Since $5.40 > 1.96$, **reject $H_0$**. The samples differ significantly.
+Since $`5.40 > 1.96`$, **reject $`H_0`$**. The samples differ significantly.
 
 ---
 
@@ -876,29 +876,29 @@ reported.
 Combine both samples, rank all observations, and calculate the rank sum
 for each sample.
 
-Let $R_1$ be the rank sum for sample 1. The corresponding U statistic
+Let $`R_1`$ be the rank sum for sample 1. The corresponding U statistic
 is:
 
-$$
+```math
 U_1 = R_1 - \frac{n_1(n_1+1)}{2}
-$$
+```
 
 Similarly:
 
-$$
+```math
 U_2 = R_2 - \frac{n_2(n_2+1)}{2}
-$$
+```
 
 The relationship is:
 
-$$
+```math
 U_1 + U_2 = n_1 n_2
-$$
+```
 
 ## Hypotheses
 
-- $H_0$: The two population distributions are the same.
-- $H_1$: The two population distributions differ.
+- $`H_0`$: The two population distributions are the same.
+- $`H_1`$: The two population distributions differ.
 
 ## Procedure
 
@@ -919,24 +919,24 @@ Use the same data as the small Mann–Whitney example:
 
 The rank sums are:
 
-$$
+```math
 R_A = 22, \qquad R_B = 14
-$$
+```
 
-The rank-sum statistic for A is $W_A = 22$. Convert to U:
+The rank-sum statistic for A is $`W_A = 22`$. Convert to U:
 
-$$
+```math
 U_A = 22 - \frac{4(5)}{2} = 12
-$$
+```
 
 For B:
 
-$$
+```math
 U_B = 14 - \frac{4(5)}{2} = 4
-$$
+```
 
 The smaller U is 4. The exact two-sided p-value is approximately 0.343.
-Since $p > 0.05$, **do not reject $H_0$**.
+Since $`p > 0.05`$, **do not reject $`H_0`$**.
 
 ## Worked example B — Larger sample
 
@@ -946,36 +946,36 @@ Since $p > 0.05$, **do not reject $H_0$**.
 All B observations receive ranks 1–20 and all A observations receive
 ranks 21–40.
 
-$$
+```math
 R_A = 21 + 22 + \cdots + 40 = 610
-$$
+```
 
-$$
+```math
 R_B = 1 + 2 + \cdots + 20 = 210
-$$
+```
 
 For A:
 
-$$
+```math
 U_A = 610 - \frac{20(21)}{2} = 400
-$$
+```
 
 For B:
 
-$$
+```math
 U_B = 210 - \frac{20(21)}{2} = 0
-$$
+```
 
-Thus $U = 0$. The large-sample normal approximation gives a very large
-absolute $Z$ value (about 5.4 with continuity correction), so **reject
-$H_0$**.
+Thus $`U = 0`$. The large-sample normal approximation gives a very large
+absolute $`Z`$ value (about 5.4 with continuity correction), so **reject
+$`H_0`$**.
 
 ## Important practical note
 
 **Mann–Whitney U and Wilcoxon Rank-Sum are two forms of the same
 test.** If both appear separately in the practical list, explain that
-the rank-sum form reports $R$ (or $W$), while the Mann–Whitney form
-reports $U$.
+the rank-sum form reports $`R`$ (or $`W`$), while the Mann–Whitney form
+reports $`U`$.
 
 ---
 
@@ -1000,40 +1000,40 @@ observations rather than their original values.
 
 Let:
 
-- $k$ = number of groups
-- $n_i$ = size of group $i$
-- $N = \sum n_i$ = total sample size
-- $R_i$ = sum of ranks in group $i$
+- $`k`$ = number of groups
+- $`n_i`$ = size of group $`i`$
+- $`N = \sum n_i`$ = total sample size
+- $`R_i`$ = sum of ranks in group $`i`$
 
 The test statistic is:
 
-$$
+```math
 H = \frac{12}{N(N+1)} \sum_{i=1}^{k} \frac{R_i^2}{n_i} - 3(N+1)
-$$
+```
 
-When there are no ties, $H$ is approximately distributed as chi-square
+When there are no ties, $`H`$ is approximately distributed as chi-square
 with:
 
-$$
+```math
 df = k - 1
-$$
+```
 
 For tied observations, apply the tie correction:
 
-$$
+```math
 C = 1 - \frac{\sum (t_j^3 - t_j)}{N^3 - N}
-$$
+```
 
-$$
+```math
 H_{\text{corrected}} = \frac{H}{C}
-$$
+```
 
-where $t_j$ is the number of observations in the $j$-th tied group.
+where $`t_j`$ is the number of observations in the $`j`$-th tied group.
 
 ## Hypotheses
 
-- $H_0$: All group distributions are the same.
-- $H_1$: At least one group distribution differs.
+- $`H_0`$: All group distributions are the same.
+- $`H_1`$: At least one group distribution differs.
 
 ## Procedure
 
@@ -1041,9 +1041,9 @@ where $t_j$ is the number of observations in the $j$-th tied group.
 2. Combine all observations and rank them.
 3. Assign average ranks to ties.
 4. Calculate the rank sum for each group.
-5. Substitute the rank sums and group sizes into the $H$ formula.
+5. Substitute the rank sums and group sizes into the $`H`$ formula.
 6. Apply tie correction if needed.
-7. Compare $H$ with the chi-square critical value with $k - 1$ degrees of
+7. Compare $`H`$ with the chi-square critical value with $`k - 1`$ degrees of
    freedom.
 8. If significant, use a post-hoc test to identify which groups differ.
 
@@ -1057,32 +1057,32 @@ Three independent groups:
 
 All values are distinct, so assign ranks 1 through 12.
 
-| Group | Ranks | Rank sum $R_i$ | $n_i$ |
+| Group | Ranks | Rank sum $`R_i`$ | $`n_i`$ |
 |:---:|:---|---:|---:|
 | A | 1, 2, 3, 4 | 10 | 4 |
 | B | 5, 6, 7, 8 | 26 | 4 |
 | C | 9, 10, 11, 12 | 42 | 4 |
 
-$$
+```math
 N = 12, \quad k = 3
-$$
+```
 
-$$
+```math
 H = \frac{12}{12(13)} \left(\frac{10^2}{4} + \frac{26^2}{4} + \frac{42^2}{4}\right) - 3(13)
-$$
+```
 
-$$
+```math
 H \approx 9.846
-$$
+```
 
 Degrees of freedom:
 
-$$
+```math
 df = k - 1 = 2
-$$
+```
 
-At 5% significance, $\chi^2_{0.05,\,2} = 5.991$. Since
-$9.846 > 5.991$, **reject $H_0$**. At least one group distribution
+At 5% significance, $`\chi^2_{0.05,\,2} = 5.991`$. Since
+$`9.846 > 5.991`$, **reject $`H_0`$**. At least one group distribution
 differs.
 
 > With only 4 observations per group, the chi-square approximation is
@@ -1098,37 +1098,37 @@ Three independent groups, each with 10 observations:
 
 The combined ranks are 1 through 30.
 
-$$
+```math
 N = 30, \quad n_A = n_B = n_C = 10
-$$
+```
 
 Rank sums:
 
-$$
+```math
 R_A = 1 + \cdots + 10 = 55
-$$
+```
 
-$$
+```math
 R_B = 11 + \cdots + 20 = 155
-$$
+```
 
-$$
+```math
 R_C = 21 + \cdots + 30 = 255
-$$
+```
 
-$$
+```math
 H = \frac{12}{30(31)} \left(\frac{55^2}{10} + \frac{155^2}{10} + \frac{255^2}{10}\right) - 3(31)
-$$
+```
 
-$$
+```math
 H \approx 25.806
-$$
+```
 
-$$
+```math
 df = 3 - 1 = 2
-$$
+```
 
-Since $25.806 > 5.991$, **reject $H_0$**. There is a significant
+Since $`25.806 > 5.991`$, **reject $`H_0`$**. There is a significant
 difference among the group distributions.
 
 ## Important note
@@ -1156,27 +1156,27 @@ strength and direction of association between two variables.
 
 ## Theory
 
-**Spearman's rank correlation coefficient**, denoted by $r_s$ or
-$\rho_s$, measures the strength and direction of a **monotonic
+**Spearman's rank correlation coefficient**, denoted by $`r_s`$ or
+$`\rho_s`$, measures the strength and direction of a **monotonic
 association** between two variables. It is calculated as the Pearson
 correlation between the ranks of the two variables.
 
 When there are no tied ranks, the shortcut formula is:
 
-$$
+```math
 r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
-$$
+```
 
 where:
 
-- $d_i$ = difference between the two ranks for pair $i$
-- $n$ = number of paired observations
+- $`d_i`$ = difference between the two ranks for pair $`i`$
+- $`n`$ = number of paired observations
 
 The coefficient ranges from −1 to +1:
 
-- $+1$: perfect positive rank association
-- $0$: no rank correlation
-- $-1$: perfect negative rank association
+- $`+1`$: perfect positive rank association
+- $`0`$: no rank correlation
+- $`-1`$: perfect negative rank association
 
 When tied values occur, assign average ranks and calculate the Pearson
 correlation of the two rank columns. Do not use the shortcut formula
@@ -1184,16 +1184,16 @@ without an appropriate tie treatment.
 
 ## Hypotheses
 
-- $H_0$: There is no population rank correlation ($\rho_s = 0$).
-- $H_1$: There is a population rank correlation ($\rho_s \neq 0$).
+- $`H_0`$: There is no population rank correlation ($`\rho_s = 0`$).
+- $`H_1`$: There is a population rank correlation ($`\rho_s \neq 0`$).
 
 ## Procedure
 
 1. Record paired observations for variables X and Y.
 2. Rank X values and Y values separately.
 3. Use average ranks for tied values.
-4. Calculate $d_i = R_{X_i} - R_{Y_i}$.
-5. Square each difference and calculate $\sum d_i^2$.
+4. Calculate $`d_i = R_{X_i} - R_{Y_i}`$.
+5. Square each difference and calculate $`\sum d_i^2`$.
 6. Use the shortcut formula if there are no ties.
 7. If ties occur, calculate Pearson correlation between the rank
    columns.
@@ -1201,7 +1201,7 @@ without an appropriate tie treatment.
 
 ## Worked example A — Small sample (no ties)
 
-| Person | X | Rank X | Y | Rank Y | $d$ | $d^2$ |
+| Person | X | Rank X | Y | Rank Y | $`d`$ | $`d^2`$ |
 |---:|---:|---:|---:|---:|---:|---:|
 | 1 | 10 | 1 | 20 | 2 | −1 | 1 |
 | 2 | 20 | 2 | 10 | 1 | 1 | 1 |
@@ -1209,52 +1209,52 @@ without an appropriate tie treatment.
 | 4 | 40 | 4 | 50 | 5 | −1 | 1 |
 | 5 | 50 | 5 | 40 | 4 | 1 | 1 |
 
-$$
+```math
 n = 5, \qquad \sum d_i^2 = 4
-$$
+```
 
-$$
+```math
 r_s = 1 - \frac{6(4)}{5(5^2 - 1)}
-$$
+```
 
-$$
+```math
 r_s = 1 - \frac{24}{120} = 0.80
-$$
+```
 
 **Interpretation:** There is a strong positive rank correlation between
-X and Y in this sample. (With only $n = 5$, $r_s = 0.80$ is not
+X and Y in this sample. (With only $`n = 5`$, $`r_s = 0.80`$ is not
 significant at the 5% two-sided level; the exact critical value is
-$r_s = 1.00$.)
+$`r_s = 1.00`$.)
 
 ## Worked example B — Larger sample (no ties)
 
-Suppose $n = 20$, with X ranks 1 through 20 and Y ranks:
+Suppose $`n = 20`$, with X ranks 1 through 20 and Y ranks:
 
-$$
+```math
 2, 1, 4, 3, 6, 5, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15, 18, 17, 20, 19
-$$
+```
 
 Each adjacent pair is swapped. Therefore, every one of the 20
 observations has a squared rank difference of 1, giving:
 
-$$
+```math
 \sum d_i^2 = 20
-$$
+```
 
-$$
+```math
 r_s = 1 - \frac{6(20)}{20(20^2 - 1)}
-$$
+```
 
-$$
+```math
 r_s = 1 - \frac{120}{7980} \approx 0.985
-$$
+```
 
 **Interpretation:** There is a very strong positive rank correlation
 between X and Y.
 
 ## Interpretation guide
 
-| Value of $r_s$ | General interpretation |
+| Value of $`r_s`$ | General interpretation |
 |:---|:---|
 | Close to +1 | Strong positive monotonic association |
 | Close to 0 | Weak or no monotonic association |
@@ -1300,15 +1300,15 @@ may vary by subject or reference book.
 
 | Practical | Main statistic |
 |:---|:---|
-| Runs Test | $Z = \dfrac{R - E(R)}{\sqrt{\operatorname{Var}(R)}}$ |
-| Sign Test | $X \sim B(n,\ 0.5)$ |
-| Wilcoxon Signed-Rank | $T = \min(W^+,\ W^-)$ |
-| K–S One-Sample | $D = \max(D^+,\ D^-)$ |
-| K–S Two-Sample | $D = \sup_x \lvert F_1(x) - F_2(x) \rvert$ |
-| Mann–Whitney U | $U_1 = R_1 - \dfrac{n_1(n_1+1)}{2}$ |
-| Wilcoxon Rank-Sum | $W = R_1$, with conversion to U if needed |
-| Kruskal–Wallis | $H = \dfrac{12}{N(N+1)} \sum \dfrac{R_i^2}{n_i} - 3(N+1)$ |
-| Spearman | $r_s = 1 - \dfrac{6 \sum d_i^2}{n(n^2 - 1)}$, when there are no ties |
+| Runs Test | $`Z = \dfrac{R - E(R)}{\sqrt{\mathrm{Var}(R)}}`$ |
+| Sign Test | $`X \sim B(n,\ 0.5)`$ |
+| Wilcoxon Signed-Rank | $`T = \min(W^+,\ W^-)`$ |
+| K–S One-Sample | $`D = \max(D^+,\ D^-)`$ |
+| K–S Two-Sample | $`D = \sup_x \lvert F_1(x) - F_2(x) \rvert`$ |
+| Mann–Whitney U | $`U_1 = R_1 - \dfrac{n_1(n_1+1)}{2}`$ |
+| Wilcoxon Rank-Sum | $`W = R_1`$, with conversion to U if needed |
+| Kruskal–Wallis | $`H = \dfrac{12}{N(N+1)} \sum \dfrac{R_i^2}{n_i} - 3(N+1)`$ |
+| Spearman | $`r_s = 1 - \dfrac{6 \sum d_i^2}{n(n^2 - 1)}`$, when there are no ties |
 
 **Final exam reminder:** Always write the hypotheses, identify whether
 the samples are independent or paired, state the significance level,
